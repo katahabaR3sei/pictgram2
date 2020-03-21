@@ -8,8 +8,11 @@ Rails.application.routes.draw do
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
-  delete "/login", to: "sessions#destory"
+  get "/logout", to: "sessions#destroy"
 
   resources :users
   resources :topics
+
+  get "favorites/index"
+  post "/favorites", to:"favorites#cretae"
 end

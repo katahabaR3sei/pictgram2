@@ -5,10 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" > </ script>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <body>  
 <% flash.each do |key,value| %>
   <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
 <% end %>  
@@ -20,12 +22,12 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to favorites_index_path do %>
                 <%= image_tag "icons/heart.png" %>
               <% end %>
             </li>
             <li>
-              <%= link_to "new_topic_path" do %>
+              <%= link_to new_topic_path do %>
                 <%= image_tag "icons/camera.png" %>
               <% end %>
             </li>
@@ -49,12 +51,11 @@
         </ul>
       </div>
     </nav>
-  <body>
     <%= yield %>
     <script>
-  $(function(){
-    $(".alert").fadeOut(5000);
-  });
-</script>
+      $(function() {
+        $(".alert").fadeOut(5000);
+      });
+    </script>
   </body>
 </html>
