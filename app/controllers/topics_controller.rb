@@ -12,10 +12,12 @@ class TopicsController < ApplicationController
       render :new
     end
   end
+  
   def index
     @topics =Topic.all.includes(:favorite_users)
-    @comment = Comment.find_by(id:params[:id])
+    @comment = Comment.new(content:params[:content])
   end
+ 
 
   
 
