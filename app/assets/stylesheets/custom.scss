@@ -134,6 +134,19 @@ h1, h2 {
       width: 35px;
       height: 30px;
       margin-left: 20px;
+      color: #808080; 
+    }
+    .delete {
+      color: #e54747;
     }
   }
+}
+
+textarea {
+  width:50%;
+  height:200px;
+}
+
+input {
+  display:block;
 }
