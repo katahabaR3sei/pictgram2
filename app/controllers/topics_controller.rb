@@ -14,6 +14,7 @@ class TopicsController < ApplicationController
   end
   def index
     @topics =Topic.all.includes(:favorite_users)
+    @comment = Comment.find_by(id:params[:id])
   end
 
   

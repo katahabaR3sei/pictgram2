@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   def create
     @comment =Comment.new(content:params[:content])
     @comment.save
-    render topics_path, success:"コメントしました"
+    redirect_to topics_path, success:"コメントしました"
+    #「redirect_to」から「render」へ変更
   end
 end
