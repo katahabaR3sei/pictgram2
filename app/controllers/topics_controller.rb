@@ -15,7 +15,7 @@ class TopicsController < ApplicationController
   
   def index
     @topics =Topic.all.includes(:favorite_users)
-    @comment = Comment.new(content:params[:content])
+    @comment = Comment.new
   end
  
 
