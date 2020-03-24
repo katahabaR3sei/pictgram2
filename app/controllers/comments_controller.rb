@@ -8,6 +8,8 @@ class CommentsController < ApplicationController
   end
   def create
     @comment =Comment.new(content:params[:content])
+
+
     @comment.save
     redirect_to topics_path
     #「redirect_to」から「render」へ変更
