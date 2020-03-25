@@ -2,8 +2,9 @@
   <div class="container">
   <h1>コメントを記入してください</h1>
   <%= form_for @comment do |f| %>
+    <% %><%= f.label :comment %>
     <%= f.text_field :content %>
-    <%= f.submit 'コメントする' %>
   <% end %>  
+  <%= f.submit 'コメントする' %>
   </div>
 </div>

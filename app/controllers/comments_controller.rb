@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
     
   end
   def create
-    @comment = Comment.new(comment_params)
+    @comment = current_user.comments.new(comment_params)
+    @comment.save
     @comment.user_id = current_user.id
     render topics_path
     #「redirect_to」から「render」へ変更
