@@ -25,7 +25,13 @@
               <p class="topic-text">
                 <%= topic.description %>
               </p>
-              
+
+              <ul>
+                <% topic.comments.each do |comment| %>
+                  <li><%= comment.content %></li>
+                <% end %>
+              </ul>
+
             <% end %>  
             
           </div>
