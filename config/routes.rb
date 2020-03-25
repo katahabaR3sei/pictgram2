@@ -1,22 +1,19 @@
 Rails.application.routes.draw do
-  get 'topics/new'
   get 'sessions/new'
-  get 'users/new'
   root "pages#index"
   get "pages/help"
-  resources :users
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
 
   resources :users
-  resources :topics
+
+  resources :topics do
+    resources :comments
+  end
 
   get "favorites/index"
   get "/favorites", to:"favorites#create"
   delete "/favorites", to:"favorites#destroy"
-  post "comments/create",to:"comments#create"
-  get "comments/index", to:"comments#index"
-  get "comments/new"
 end

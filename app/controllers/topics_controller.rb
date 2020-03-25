@@ -14,12 +14,10 @@ class TopicsController < ApplicationController
   end
   
   def index
-    @topics =Topic.all.includes(:favorite_users)
+    @topics = Topic.all.includes(:favorite_users)
     @comment = Comment.new
   end
- 
 
-  
 
   private
   def topic_params

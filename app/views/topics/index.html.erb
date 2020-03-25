@@ -19,7 +19,7 @@
                 <%= topic.favorite_users.count %>
               
               <% end %> 
-              <%= link_to comments_new_path do %>
+              <%= link_to new_topic_comment_path(topic) do %>
                 <%= image_tag "icons/comment.png", class:"topic-index-icon delete" %> 
               <% end %> 
               <p class="topic-text">
